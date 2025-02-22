@@ -15,7 +15,7 @@ function Update() {
       .then((res) => {
         setName(res.data[0].Name);
         setEmail(res.data[0].Email);
-        setMessage(res.data[0].Message);
+        setMessage(res.data[0].massage);
       })
       .catch((error) => {
         console.log("waxaa jira error  ", error);
@@ -25,10 +25,7 @@ function Update() {
   const HandleUpdate = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:3000/update/Cawasho/${params.id}`, {
-        Name: Name,
-        Email: Email,
-        massage: Message,
+      .put(`http://localhost:3000/update/Cawasho/${params.id}`, { Name: Name, Email: Email, massage: Message,
       })
       .then(() => {
         alert("Updated successfully!");
