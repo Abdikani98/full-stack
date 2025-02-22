@@ -42,14 +42,6 @@ app.get("/read/Cawasho/:id", async (req, res) => {
         }
 })
 
-//  read single data
-app.get("/read/cawasho/single/:id", async (req, res) => {
-        const ReadSingleData = await CawashoSchema.find({_id: req.params.id})
-        if(ReadSingleData){
-                res.send(ReadSingleData)
-        }
-})
-
 // update the data
 
 app.put("/update/Cawasho/:id", async (req, res) => {
